@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dkydiabl7cwyd"]
+
+[ext_resource type="Texture2D" uid="uid://ur0rvmr00mtu" path="res://Sprites/HandSprites/Pistolidle.png" id="1_8erm5"]
+[ext_resource type="Script" uid="uid://be3xcv41jigxl" path="res://Scenes/player.gd" id="1_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://chymkj4iqvji5" path="res://Sprites/HandSprites/Pistolfire1.png" id="2_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://dxp8i2ooqfkkb" path="res://Sprites/HandSprites/Pistolfire2.png" id="3_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://cvn2cikrxwq21" path="res://Sprites/HandSprites/Pistolfire3.png" id="4_gymyn"]
+[ext_resource type="Texture2D" uid="uid://cwlp5xej8opgc" path="res://Sprites/HandSprites/rapidfire1.png" id="5_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://dy6glt46wk152" path="res://Sprites/HandSprites/rapidfire2.png" id="6_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://b70jxdobcyogj" path="res://Sprites/HandSprites/rapidfire3.png" id="7_7dp3o"]
+[ext_resource type="Texture2D" uid="uid://dym7pv32ekb00" path="res://Sprites/HandSprites/rapidlidle.png" id="8_h4iuc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fd4e3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqcod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8erm5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f1ek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tx1dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gymyn")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pu2lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ukyrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7dp3o")
+}],
+"loop": true,
+"name": &"rapidfire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_h4iuc")
+}],
+"loop": true,
+"name": &"rapidfireidle",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody3D" unique_id=1599218312]
+script = ExtResource("1_f1ek2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=725090765]
+shape = SubResource("CapsuleShape3D_fd4e3")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=40590860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5995754, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1158243772]
+target_position = Vector3(0, 0, -2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2104339485]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=51293758]
+position = Vector2(882, 410)
+scale = Vector2(2.45, 2.45)
+sprite_frames = SubResource("SpriteFrames_qqcod")
+animation = &"rapidfireidle"
