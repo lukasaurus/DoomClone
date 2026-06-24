@@ -18,7 +18,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_8erm5")
 }],
-"loop": true,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -32,7 +32,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_gymyn")
 }],
-"loop": true,
+"loop": 0,
 "name": &"fire",
 "speed": 5.0
 }, {
@@ -46,7 +46,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_7dp3o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"rapidfire",
 "speed": 5.0
 }, {
@@ -54,7 +54,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_h4iuc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"rapidfireidle",
 "speed": 5.0
 }]
@@ -77,4 +77,3 @@ target_position = Vector3(0, 0, -2)
 position = Vector2(882, 410)
 scale = Vector2(2.45, 2.45)
 sprite_frames = SubResource("SpriteFrames_qqcod")
-animation = &"rapidfireidle"
